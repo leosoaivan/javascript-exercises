@@ -20,9 +20,6 @@ var caesar = function(string, shift = 0) {
       shifted.push(string.charAt(i))
     }
   }
-  // 97 - 122, a -z
-  // 65 - 90, A - Z
-
   return shifted.join('')
 }
 
