@@ -1,21 +1,21 @@
-function echo() {
-	
+function echo(string) {
+	return string
 }
 
-function shout() {
-	
+function shout(string) {
+	return string.toUpperCase()
 }
 
-function repeat() {
-
+function repeat(string, count = 2) {
+	return (string + ' ').repeat(count).trim()
 }
 
-function pieceOfWord() {
-	
+function pieceOfWord(string, sliceEnd) {
+	return string.slice(0, sliceEnd)
 }
 
-function firstWord() {
-	
+function firstWord(string) {
+	return string.split(' ')[0]
 }
 
 function capitalize(word) {
@@ -23,8 +23,21 @@ function capitalize(word) {
 	// This function just capitalizes the word given to it, use in conjunction with titleCreator
 }
 
-function titleCreator() {
-	
+function titleCreator(string) {
+	const words = string.split(' ')
+	const littleWords = ['the', 'over', 'and']
+	let title = '';
+
+	words.forEach(function(word, index) {
+		if (index == 0) {
+			title += capitalize(word)
+		} else if (littleWords.includes(words[index])) {
+			title += (' ' + word)
+		} else {
+			title += (' ' + capitalize(word)) 
+		}
+	});
+	return title
 }
 
 module.exports = {
